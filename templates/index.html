@@ -96,7 +96,7 @@
             <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
             <div class="carousel-inner" role="listbox">
-            {% for item in carousel %}
+              {% for item in carousel %}
                  {% if forloop.first %}:
               <div class="carousel-item active" style="background-image: url(media/{{ item.carousel_image }});">
                  {% else %}
