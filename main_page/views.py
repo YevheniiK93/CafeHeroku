@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Category, Dish, Gallery, Events, Whuus, MyCarousel, Chefs, Emotions
 from .forms import UserReservationsForm
-import random
 
 
 def main_page_view(request):
@@ -14,7 +13,6 @@ def main_page_view(request):
     dishes = Dish.objects.filter(is_visible=True)
     special_dishes = Dish.objects.filter(is_visible=True).filter(is_special=True)
     gallery = Gallery.objects.filter(is_visible=True)
-    gallery = random.choices(gallery, k=4)
     user_reservation = UserReservationsForm()
     events = Events.objects.filter(is_visible=True)
     whuus = Whuus.objects.all()
