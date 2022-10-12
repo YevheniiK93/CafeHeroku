@@ -1,0 +1,31 @@
+<section id="testimonials" class="testimonials">
+      <div class="container position-relative">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                  {% for item in emotions %}
+                <img src="{{ item.emotions_photo }}" class="testimonial-img" alt="">
+                <h3>{{ item.emotions_name }}</h3>
+                <h4>{{ item.emotions_pro }}</h4>
+                <div class="stars">
+                  {{ item.emotions_rating }}  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{ item.emotions_message }}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+                  {% endfor %}
+              <!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>

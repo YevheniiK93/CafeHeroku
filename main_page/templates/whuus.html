@@ -1,0 +1,24 @@
+<section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Why choose <span>Our Restaurant</span></h2>
+          <h3>Three reasons to choose us. Three reasons to spend time with us:</h3>
+        </div>
+
+        <div class="row">
+          {% for item in whuus %}
+          <div class="col-lg-4">
+            <div class="box">
+              <span>{{ item.whuus_order }}</span>
+              <h4>{{ item.whuus_title }}</h4>
+              <p>{{ item.whuus_about }}</p>
+            </div>
+          </div>
+          {% endfor %}
+
+
+        </div>
+
+      </div>
+    </section>

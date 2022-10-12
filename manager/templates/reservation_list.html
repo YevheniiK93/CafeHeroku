@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block main_content %}
+    <section id="reserves">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+                {% for item in lst %}
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="{% url 'manager:reservation_close' pk=item.pk %}">
+                                <button type="button" class="btn btn-primary">Close request</button>
+                            </a>
+                        </div>
+                        <div class="col-md-3">Name: {{ item.name }}</div>
+                        <div class="col-md-3">Phone num.: {{ item.phone }}</div>
+                        <div class="col-md-3">Request date: {{ item.date|date:'d.m.Y' }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3"><p>Reservation date: {{ item.order_date }} </p></div>
+                        <div class="col-md-3"><p>Reservation time: {{ item.order_time }} </p></div>
+                        <div class="col-md-3"><p>Comments: {{ item.message }} </p></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

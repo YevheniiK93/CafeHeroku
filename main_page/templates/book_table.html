@@ -1,0 +1,53 @@
+<section id="book-a-table" class="book-a-table">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Book a <span>Table</span></h2>
+          <h3>Reserve a table. Our manager will contact you to coordinate the order.</h3>
+        </div>
+
+        <form method="post" role="form" class="php-email-form">
+            {% csrf_token %}
+            <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              {{ form_reservation.name }}
+              <div class="validate"></div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                {{ form_reservation.email }}
+              <div class="validate"></div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              {{ form_reservation.phone }}
+              <div class="validate"></div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              {{ form_reservation.num_of_people }}
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              {{ form_reservation.order_date }}
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              {{ form_reservation.order_time }}
+              <div class="validate"></div>
+            </div>
+            <div class="form-group mt-3">
+                {{ form_reservation.message }}
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </div>
+        </form>
+      </div>
+    </section>
